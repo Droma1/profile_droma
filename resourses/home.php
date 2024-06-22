@@ -11,14 +11,20 @@
     <?php include "./resourses/components/scripts.php"; ?>
 </head>
 <body>
-    <h5>mi fist page</h5>
+
 <?php
     $flag_ = (!isset($_SESSION['tipo_user'])) ? 1 : 2;
     $view = new Route_controller();
     $view_ = $view->viewDir($flag_);
 
+    include "./resourses/modules/inicio.php";
+
     echo match ($view_) {
-        'home' => 'home page',
+        'home' => (function() {
+            ob_start();
+            include "./resourses/modules/body.php";
+            return ob_get_clean();
+        })(),
         '404' => (function() {
             ob_start();
             include "./resourses/modules/404.php";
@@ -34,18 +40,6 @@
             }
         })(),
     };
-
-    /*switch ($view_) {
-        case 'home':
-            echo 'home page';
-            break;
-        case '404':
-            include "./resourses/modules/404.php";
-        default:
-            ($view_ != '404')? include $view_: '';
-            break;
-    }*/
-
 
 ?>
 </body>

@@ -1,0 +1,39 @@
+body {
+    background-color: white;
+    color: black;
+}
+
+/* Estilos para modo oscuro */
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+/* Puedes agregar más estilos específicos para el modo oscuro */
+.dark-mode .some-element {
+    background-color: gray;
+}
+.no_found{
+    position: relative;
+    height: calc(100vh - 60px);
+    align-items: center;
+}
+.no_found .row{
+    height: 100% !important;
+}
+.nav_link{
+    position: relative;
+    float: right;
+    display: flex;
+}
+.nav_link .navbar-nav{
+    display: inline-block;
+}
+.nav_logo{
+    display: inline-flex;
+    padding: 10px;
+}
+.nav_link .navbar-nav li{
+    display: inline-flex;
+    padding: 10px;
+}
