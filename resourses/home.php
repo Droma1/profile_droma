@@ -40,7 +40,7 @@
             }
         })(),
     };
-
+    include "./resourses/components/user/footer.php";
 ?>
 </body>
 </html>
